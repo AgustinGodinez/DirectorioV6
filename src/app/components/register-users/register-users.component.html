@@ -1,0 +1,45 @@
+<div class="container w-75 body-form bg-white mt-4 mb-4 rounded-3 shadow">
+    <div class="row">
+        <div class="col bg d-none d-lg-block  col-md-4 d-col-lg-5 col-xl-6 "> <!-- d-xl-block -->
+
+        </div>
+        <div class="separador"></div>
+        <div class="col m-4 rounded-end">
+            <div class="text-end">
+                <img src='../../../assets/img/sit (3).png' width="80" alt="">
+            </div>
+            <h2 class="fw-bold text-center  pt-3">Registrar Usuarios</h2>
+            <!--Registrar usuarios-->
+            <form  >
+
+                <div class="form-group">
+                  <label class="form-label">Nombre Completo</label>
+                  <input  type="text" id="name" name="name" class="form-control" placeholder="Nombre Completo" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"  [(ngModel)]="datos2.name" #nameLocal="ngModel">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Correo electronico</label>
+                  <input  type="email" id="email" name="email" class="form-control"   placeholder="Correo Electronico"  required email  [(ngModel)]="datos2.email" #emailLocal="ngModel" >
+                </div>
+      
+                <div class="form-group">
+                  <label  class="form-label">Contraseña</label>
+                  <input  type="password" id="password" name="password" class="form-control"  placeholder="Contraseña" required minlength="8" [(ngModel)]="datos2.password"  >
+                </div>
+      
+                <div class="form-group">
+                    <label for="password" class="form-label">Rol:</label>
+                    <select  class="form-control mx-1" [(ngModel)]="datos2.roles.rol" >
+                        <option value=admin>Administrador</option>
+                        <option value=usuario>Usuario</option>
+                      </select>
+                </div>
+                <br/>
+                <div class="d-grid">
+                    <button id="btnSubmit" type="submit" class="btn btn-primary"   (click)="guardarUsuario()">Registrarse</button>
+                </div>
+                <br/>
+              </form>
+        </div>
+    </div>
+</div>
+
